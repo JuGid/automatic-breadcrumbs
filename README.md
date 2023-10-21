@@ -1,5 +1,5 @@
 # Automatic Breadcrumbs
-This is an automatic (and manual) breadcrumbs bundle for Symfony. It creates the breadcrumbs based on the route path or other strategies.
+This bundle helps you creating automatic and manual breadcrumbs for your Symfony project.
 
 Installation
 ============
@@ -98,3 +98,5 @@ Section to complete soon...
 Contributing
 ============
 We welcome contributions to this project, including pull requests and issues (and discussions on existing issues).
+
+Originally created for [Suitvie](https://suitvie.fr) (bêta 0.3.0)

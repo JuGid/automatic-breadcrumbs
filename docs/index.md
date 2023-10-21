@@ -1,6 +1,5 @@
-# Jugid Automatic Bundle Documentation
-This bundle helps you creating automatic and non-automatic breadcrumbs for your Symfony project
-This file is its documentation.
+# Automatic Breadcrumbs Bundle Documentation
+This bundle helps you creating automatic and manual breadcrumbs for your Symfony project.
 
 ## Usage
 This bundle helps you to create breadcrumbs for your user in two ways : Automatic and Manual.
