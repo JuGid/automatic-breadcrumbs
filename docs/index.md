@@ -56,6 +56,10 @@ separator:string = breadcrumbs separator
 template:string = path to the template
 ```
 
+```jinja
+{{ jugid_breadcrumbs_render('default', {separator: '-', template: 'my_template.html.twig'}) }}
+```
+
 ### Breadcrumbs attribute
 For automatic breadcrumbs, the bundle needs to know the text to print. This is done thanks to the Breadcrumb attribute.
 ```php
