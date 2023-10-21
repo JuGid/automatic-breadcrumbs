@@ -1,0 +1,12 @@
+{% if breadcrumb_collection | length > 0 %}
+    <div class="flex flex-row space-x-4">
+    {% for breadcrumb in breadcrumb_collection %}
+        {% if loop.index0 < ((breadcrumb_collection|length) - 1) %}
+            <a class="hover:underline" href="{{ breadcrumb.path }}">{{ breadcrumb.text }}</a> 
+            <span>{{ separator }}</span>
+        {% else %}
+            <span>{{ breadcrumb.text }}</span>
+        {% endif %}
+    {% endfor %}
+    </div>
+{% endif %}

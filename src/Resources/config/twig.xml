@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services
+        http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+
+        <service id="jugid_automatic_breadcrumbs.twig.breadcrumbs_extension" class="Jugid\AutomaticBreadcrumbs\Twig\BreadcrumbsExtension">
+            <argument type="service" id="jugid_automatic_breadcrumbs.breadcrumbs" />
+            <tag name="twig.extension"/>
+        </service>
+        
+        <service id="Jugid\AutomaticBreadcrumbs\Twig\BreadcrumbsExtension" alias="jugid_automatic_breadcrumbs.twig.breadcrumbs_extension" />
+        
+    </services>
+</container>

@@ -1,0 +1,12 @@
+{% if breadcrumb_collection | length > 0 %}
+    <div>
+    {% for breadcrumb in breadcrumb_collection %}
+        {% if loop.index0 < ((breadcrumb_collection|length) - 1) %}
+            <a href="{{ breadcrumb.path }}">{{ breadcrumb.text }}</a> 
+            <span>{{ separator }}</span>
+        {% else %}
+            <span>{{ breadcrumb.text }}</span>
+        {% endif %}
+    {% endfor %}
+    </div>
+{% endif %}

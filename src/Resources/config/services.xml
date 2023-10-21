@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services
+        http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="jugid_automatic_breadcrumbs.breadcrumbs" class="Jugid\AutomaticBreadcrumbs\Breadcrumbs" public="true"/>
+        <service id="Jugid\AutomaticBreadcrumbs\Breadcrumbs" alias="jugid_automatic_breadcrumbs.breadcrumbs" public="false"/>
+
+        <service id="jugid_automatic_breadcrumbs.renderer.default" class="Jugid\AutomaticBreadcrumbs\Renderer\BreadcrumbsRenderer"/>
+
+        <service id="Jugid\AutomaticBreadcrumbs\Subscriber\BreadcrumbsSubscriber">
+            <tag name="kernel.event_listener" event="kernel.controller"/>
+        </service>
+    </services>
+</container>
