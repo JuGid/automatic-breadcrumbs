@@ -1,5 +1,5 @@
 {
-    "name": "jugid/automatic-breadcrumbs",
+    "name": "jugid/automatic-breadcrumbs-bundle",
     "description": "Create automatic and manual breadcrumbs",
     "type": "symfony-bundle",
     "require-dev": {

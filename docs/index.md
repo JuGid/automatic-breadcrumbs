@@ -55,9 +55,11 @@ separator:string = breadcrumbs separator
 template:string = path to the template
 ```
 
-```jinja
+```twig
 {{ jugid_breadcrumbs_render('default', {separator: '-', template: 'my_template.html.twig'}) }}
 ```
+#### Namespaces
+Namespaces can help you render multiple set of breadcrumbs on one page. By default, the bundle uses the `default` namespace but feel free to use more.
 
 ### Breadcrumbs attribute
 For automatic breadcrumbs, the bundle needs to know the text to print. This is done thanks to the Breadcrumb attribute.
@@ -132,7 +134,7 @@ You can create your own template and set it in the configuration. The Renderer i
 
 ### Collection
 You can also create your own method storing breadcrumbs. Simply create a class implementing the Jugid\AutomaticBreadcrumbs\Collection\CollectionInterface, tag it as `jugid.automati_breadcrumbs.collection` in your `services.yaml` and set it in the bundle configuration.
-The default collection works as the bundle is supposed to work. The default collection implements this methods : 
+The default collection works as the bundle is supposed to work.
 
 ```php
 public function addBreadcrumb(BreadcrumbInterface $breadcrumb, string $namespace = 'default'): self;
