@@ -12,10 +12,16 @@ class UrlBreadcrumb implements BreadcrumbInterface {
         private string $path
     ) {}
 
+    /**
+     * @inheritDoc
+     */
     public function getText(): string { 
         return $this->text;
     }
 
+    /**
+     * @inheritDoc
+     */
     public function getPath(): string { 
         return $this->path;
     }

@@ -3,10 +3,19 @@
 namespace Jugid\AutomaticBreadcrumbs\Strategy;
 
 /**
+ * This strategy is as simple as possible. 
+ * It takes the path and decompose it into subpaths.
+ * For example :
+ * - path : /path1/path2/path3
+ * - returns : ['/', '/path1/, '/path1/path2/, '/path1/path2/path3/']
+ * This array will be tested in the subscriber.
  * @author Julien Gidel <gidjulien@gmail.com>
  */
 class HierarchyStrategy implements StrategyInterface {
 
+    /**
+     * @inheritDoc
+     */
     public function decompose(string $path) : array
     {
         $exploded_path = explode('/', $path);

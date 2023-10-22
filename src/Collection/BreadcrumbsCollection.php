@@ -20,6 +20,9 @@ class BreadcrumbsCollection implements BreadcrumbsCollectionInterface
         private UrlGeneratorInterface $urlGenerator
     ) {}
 
+    /**
+     * @inheritDoc
+     */
     public function addBreadcrumb(BreadcrumbInterface $breadcrumb, string $namespace = 'default'): BreadcrumbsCollectionInterface {
         if(!$this->hasNamespace($namespace)) {
             $this->add($namespace);
@@ -30,14 +33,23 @@ class BreadcrumbsCollection implements BreadcrumbsCollectionInterface
         return $this;
     }
 
+    /**
+     * @inheritDoc
+     */
     public function addItem(string $text, string $url): BreadcrumbsCollectionInterface { 
         return $this->addItemNamespace('default', $text, $url);
     }
 
+    /**
+     * @inheritDoc
+     */
     public function addRouteItem(string $text, string $route, array $parameters = []): BreadcrumbsCollectionInterface {
         return $this->addRouteItemNamespace('default', $text, $route, $parameters);
     }
 
+    /**
+     * @inheritDoc
+     */
     public function addItemNamespace(string $namespace, string $text, string $url): BreadcrumbsCollectionInterface { 
         if(!$this->isIncluded($url, $namespace)) {
             return $this;
@@ -52,19 +64,31 @@ class BreadcrumbsCollection implements BreadcrumbsCollectionInterface
         return $this;
     }
 
+    /**
+     * @inheritDoc
+     */
     public function addRouteItemNamespace(string $namespace, string $text, string $route, array $parameters = []): BreadcrumbsCollectionInterface {
         $url = $this->urlGenerator->generate($route, $parameters);
         return $this->addItemNamespace($namespace, $text, $url);
     }
 
+    /**
+     * @inheritDoc
+     */
     public function prependItem(string $text, string $url) : BreadcrumbsCollectionInterface {
         return $this->prependItemNamespace('default', $text, $url);
     }
 
+    /**
+     * @inheritDoc
+     */
     public function prependRouteItem(string $text, string $route, array $parameters = []): BreadcrumbsCollectionInterface {
         return $this->prependRouteItemNamespace('default', $text, $route, $parameters);
     }
 
+    /**
+     * @inheritDoc
+     */
     public function prependItemNamespace(string $namespace, string $text, string $url) : BreadcrumbsCollectionInterface {
         if(!$this->isIncluded($url, $namespace)) {
             return $this;
@@ -79,17 +103,26 @@ class BreadcrumbsCollection implements BreadcrumbsCollectionInterface
         return $this;
     }
 
+    /**
+     * @inheritDoc
+     */
     public function prependRouteItemNamespace(string $namespace, string $text, string $route, array $parameters = []): BreadcrumbsCollectionInterface {
         $url = $this->urlGenerator->generate($route, $parameters);
         return $this->prependItemNamespace($namespace, $text, $url);
     }
 
+    /**
+     * @inheritDoc
+     */
     public function add(string $namespace) : void {
         if(!$this->hasNamespace($namespace)) {
             $this->breadcrumbs[$namespace] = [];
         }
     }
 
+    /**
+     * @inheritDoc
+     */
     public function clear(string $namespace = 'default'): bool { 
         if(!$this->hasNamespace($namespace)) {
             return true;
@@ -99,6 +132,9 @@ class BreadcrumbsCollection implements BreadcrumbsCollectionInterface
         return true;
     }
 
+    /**
+     * @inheritDoc
+     */
     public function removeItem(string $text, string $namespace = 'default'): bool { 
         if(!$this->hasItem($text, $namespace)) {
             return false;
@@ -116,6 +152,9 @@ class BreadcrumbsCollection implements BreadcrumbsCollectionInterface
         return false;
     }
 
+    /**
+     * @inheritDoc
+     */
     public function hasItem(string $text, string $namespace = 'default'): bool { 
         $namespace_items = $this->extract($namespace);
 
@@ -128,10 +167,16 @@ class BreadcrumbsCollection implements BreadcrumbsCollectionInterface
         return false;
     }
 
+    /**
+     * @inheritDoc
+     */
     public function hasNamespace(string $namespace = 'default'): bool { 
         return isset($this->breadcrumbs[$namespace]);
     }
 
+    /**
+     * @inheritDoc
+     */
     public function extract(string $namespace = 'default'): array { 
         if(!$this->hasNamespace($namespace)) {
             throw new LogicException(sprintf('Namespace \'%s\' does not exists', $namespace));
@@ -140,10 +185,16 @@ class BreadcrumbsCollection implements BreadcrumbsCollectionInterface
         return $this->breadcrumbs[$namespace];
     }
 
+    /**
+     * @inheritDoc
+     */
     public function setIncludes(array $includes) : void {
         $this->includes = $includes;
     }
 
+    /**
+     * @inheritDoc
+     */
     public function isIncluded(string $url, string $namespace = 'default') : bool {
 
         if(empty($this->includes)) {
@@ -178,6 +229,9 @@ class BreadcrumbsCollection implements BreadcrumbsCollectionInterface
         return false;
     }
 
+    /**
+     * @inheritDoc
+     */
     public function isEmpty(string $namespace = 'default') : bool {
         return empty($this->breadcrumbs[$namespace]);
     }

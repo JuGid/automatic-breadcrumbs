@@ -16,14 +16,23 @@ class BreadcrumbsRenderer implements BreadcrumbsRendererInterface {
         private Environment $twig
     ) {}
 
+    /**
+     * @inheritDoc
+     */
     public function setSeparator(string $separator): void { 
         $this->separator = $separator;
     }
 
+    /**
+     * @inheritDoc
+     */
     public function setTemplate(string $template): void { 
         $this->template = $template;
     }
 
+    /**
+     * @inheritDoc
+     */
     public function render(array $breadcrumb_collection, array $options) : string { 
         $this->processOptions($options);
         
@@ -36,6 +45,9 @@ class BreadcrumbsRenderer implements BreadcrumbsRendererInterface {
         );
     }
 
+    /**
+     * @inheritDoc
+     */
     public function processOptions(array $options): void { 
         if(isset($options['separator'])) {
             $this->separator = $options['separator'];

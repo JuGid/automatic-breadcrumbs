@@ -16,6 +16,9 @@ use Symfony\Component\Routing\Exception\ResourceNotFoundException;
 use Symfony\Component\Routing\RouterInterface;
 
 /**
+ * This subscriber is used to create automatic breadcrumbs
+ * using the strategy define in the configuration
+ * 
  * @author Julien Gidel <gidjulien@gmail.com>
  */
 class BreadcrumbsSubscriber implements EventSubscriberInterface 
@@ -33,12 +36,6 @@ class BreadcrumbsSubscriber implements EventSubscriberInterface
 
     public function onKernelController(ControllerEvent $event): void
     {
-        $controller = $event->getController();
-
-        if($controller instanceof ErrorController) {
-            return;
-        }
-
         //Deactivate this subscriber if the bundle is in manual
         if(!$this->breadcrumbs->isAutomatic()) {
             return;
@@ -49,46 +46,40 @@ class BreadcrumbsSubscriber implements EventSubscriberInterface
             return;
         }
 
+        $controller = $event->getController();
+
+        if($controller instanceof ErrorController) {
+            return;
+        }
+
         $paths = $this->strategy->decompose($event->getRequest()->getPathInfo());
-        $do_not_add_more = false;
-        
+        $breadcrumb_collection = $this->breadcrumbs->getCollection();
+
         foreach($paths as $path) {
             try {
                 if(!$this->breadcrumbs->getCollection()->isIncluded($path)) {
                     continue;
                 }
 
-                if($do_not_add_more) {
-                    continue;
-                }
-
                 $match = $this->router->match($path);
-                $route = $this->router->getRouteCollection()->get($match['_route']);
-                $breadcrumb_attribute = $this->resolver->resolve($route->getDefaults()['_controller']);
+                $breadcrumb_attribute = $this->resolver->resolve($match['_controller']);
 
                 if(null !== $breadcrumb_attribute) {
-                    $this->breadcrumbs
-                        ->getCollection()
-                        ->prependItemNamespace(
-                            $breadcrumb_attribute->getNamespace(), 
-                            $breadcrumb_attribute->getTitle(), 
-                            $path
-                        );
+                    $breadcrumb_collection->prependItemNamespace(
+                        $breadcrumb_attribute->getNamespace(), 
+                        $breadcrumb_attribute->getTitle(), 
+                        $path
+                    );
                     
                     if($breadcrumb_attribute->isRoot()) {
-                        $do_not_add_more = true;
+                        return;
                     }
                 }
-            } catch(ResourceNotFoundException $e) {
-                continue;
-            } catch(UnresolvedException $e) {
-                if($this->breadcrumbs->isDetectMode() && $_ENV['APP_ENV'] === 'dev') {
-                    throw $e;
-                }
+            } catch(ResourceNotFoundException | UnresolvedException $e) {
+                if($this->breadcrumbs->isDetectMode()) { throw $e; }
                 continue;
             }
         }
-
     }
 
     public function setStrategy(StrategyInterface $strategy) : void
