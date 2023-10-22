@@ -11,6 +11,12 @@ use Exception;
  */
 class BreadcrumbAttributeResolver implements ResolverInterface {
 
+    /**
+     * Resolve the breadcrumb attribute on the controller action.
+     * @param string $_controller 
+     * @return null|Breadcrumb 
+     * @throws UnresolvedException 
+     */
     public function resolve(string $_controller)
     { 
         [$controller, $action] = explode('::', $_controller);
