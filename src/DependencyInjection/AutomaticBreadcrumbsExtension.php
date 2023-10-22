@@ -10,6 +10,9 @@ use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
+/**
+ * @author Julien Gidel <gidjulien@gmail.com>
+ */
 class AutomaticBreadcrumbsExtension extends Extension {
 
     public function load(array $configs, ContainerBuilder $container)

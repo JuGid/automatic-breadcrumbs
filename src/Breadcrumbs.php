@@ -6,6 +6,9 @@ use Jugid\AutomaticBreadcrumbs\Collection\BreadcrumbsCollectionInterface;
 use Jugid\AutomaticBreadcrumbs\Renderer\BreadcrumbsRendererInterface;
 use Twig\Environment;
 
+/**
+ * @author Julien Gidel <gidjulien@gmail.com>
+ */
 class Breadcrumbs
 {
     private bool $automatic;

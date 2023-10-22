@@ -2,6 +2,9 @@
 
 namespace Jugid\AutomaticBreadcrumbs\Strategy;
 
+/**
+ * @author Julien Gidel <gidjulien@gmail.com>
+ */
 class HierarchyStrategy implements StrategyInterface {
 
     public function decompose(string $path) : array

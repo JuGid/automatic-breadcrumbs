@@ -2,6 +2,9 @@
 
 namespace Jugid\AutomaticBreadcrumbs\Model;
 
+/**
+ * @author Julien Gidel <gidjulien@gmail.com>
+ */
 class UrlBreadcrumb implements BreadcrumbInterface {
 
     public function __construct(

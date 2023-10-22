@@ -7,6 +7,9 @@ use Twig\Extension\AbstractExtension;
 use Twig\Markup;
 use Twig\TwigFunction;
 
+/**
+ * @author Julien Gidel <gidjulien@gmail.com>
+ */
 class BreadcrumbsExtension extends AbstractExtension {
     public function __construct(
         private Breadcrumbs $breadcrumbs

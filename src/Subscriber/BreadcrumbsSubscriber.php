@@ -6,17 +6,18 @@ use Jugid\AutomaticBreadcrumbs\Breadcrumbs;
 use Jugid\AutomaticBreadcrumbs\Resolver\BreadcrumbAttributeResolver;
 use Jugid\AutomaticBreadcrumbs\Exception\UnresolvedException;
 use Jugid\AutomaticBreadcrumbs\Resolver\ResolverInterface;
-use Jugid\AutomaticBreadcrumbs\Strategy\HierarchyStrategy;
 use Jugid\AutomaticBreadcrumbs\Strategy\StrategyInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Controller\ErrorController;
 use Symfony\Component\HttpKernel\Event\ControllerEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
-use Symfony\Component\Routing\Exception\MethodNotAllowedException;
 use Symfony\Component\Routing\Exception\ResourceNotFoundException;
 use Symfony\Component\Routing\RouterInterface;
 
+/**
+ * @author Julien Gidel <gidjulien@gmail.com>
+ */
 class BreadcrumbsSubscriber implements EventSubscriberInterface 
 {
     private ResolverInterface $resolver;

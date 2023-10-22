@@ -6,6 +6,9 @@ use Jugid\AutomaticBreadcrumbs\DependencyInjection\AutomaticBreadcrumbsExtension
 use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
+/**
+ * @author Julien Gidel <gidjulien@gmail.com>
+ */
 class AutomaticBreadcrumbsBundle extends Bundle {
 
     /*

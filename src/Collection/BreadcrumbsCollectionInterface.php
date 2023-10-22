@@ -4,6 +4,9 @@ namespace Jugid\AutomaticBreadcrumbs\Collection;
 
 use Jugid\AutomaticBreadcrumbs\Model\BreadcrumbInterface;
 
+/**
+ * @author Julien Gidel <gidjulien@gmail.com>
+ */
 interface BreadcrumbsCollectionInterface {
     public function addBreadcrumb(BreadcrumbInterface $breadcrumb, string $namespace = 'default'): self;
     public function addItem(string $text, string $url) : self;

@@ -5,6 +5,9 @@ namespace Jugid\AutomaticBreadcrumbs\DependencyInjection;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
+/**
+ * @author Julien Gidel <gidjulien@gmail.com>
+ */
 class Configuration implements ConfigurationInterface {
 
     public function getConfigTreeBuilder(): TreeBuilder { 

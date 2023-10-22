@@ -6,6 +6,9 @@ use Jugid\AutomaticBreadcrumbs\Attribute\Breadcrumb;
 use Jugid\AutomaticBreadcrumbs\Exception\UnresolvedException;
 use Exception;
 
+/**
+ * @author Julien Gidel <gidjulien@gmail.com>
+ */
 class BreadcrumbAttributeResolver implements ResolverInterface {
 
     public function resolve(string $_controller)

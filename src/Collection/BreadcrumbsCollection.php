@@ -7,6 +7,9 @@ use Jugid\AutomaticBreadcrumbs\Model\UrlBreadcrumb;
 use LogicException;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
+/**
+ * @author Julien Gidel <gidjulien@gmail.com>
+ */
 class BreadcrumbsCollection implements BreadcrumbsCollectionInterface 
 {
     private array $breadcrumbs = ['default' => []];

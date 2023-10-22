@@ -4,6 +4,9 @@ namespace Jugid\AutomaticBreadcrumbs\Renderer;
 
 use Twig\Environment;
 
+/**
+ * @author Julien Gidel <gidjulien@gmail.com>
+ */
 class BreadcrumbsRenderer implements BreadcrumbsRendererInterface {
 
     private string $template;

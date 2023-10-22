@@ -4,6 +4,9 @@ namespace Jugid\AutomaticBreadcrumbs\Attribute;
 
 use Attribute;
 
+/**
+ * @author Julien Gidel <gidjulien@gmail.com>
+ */
 #[Attribute]
 class Breadcrumb {
 
