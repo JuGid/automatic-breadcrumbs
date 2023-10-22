@@ -7,7 +7,7 @@ use Attribute;
 /**
  * @author Julien Gidel <gidjulien@gmail.com>
  */
-#[Attribute]
+#[Attribute(\Attribute::TARGET_METHOD)]
 class Breadcrumb {
 
     public function __construct(
