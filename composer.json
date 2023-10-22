@@ -12,6 +12,11 @@
             "Jugid\\AutomaticBreadcrumbs\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Jugid\\AutomaticBreadcrumbs\\Tests\\": "tests/"
+        }
+    },
     "authors": [
         {
             "name": "Julien Gidel",
@@ -28,5 +33,10 @@
         "twig/twig": "^3.0",
         "symfony/dependency-injection": "^6.3",
         "symfony/yaml": "^6.3"
+    },
+    "scripts": {
+        "unit-tests": [
+            "vendor/bin/phpunit --colors=always --testsuite tests --coverage-clover ./coverage.xml "
+        ]
     }
 }
