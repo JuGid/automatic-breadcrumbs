@@ -1,5 +1,6 @@
 # Automatic Breadcrumbs Bundle
 [![codecov](https://codecov.io/gh/JuGid/automatic-breadcrumbs/graph/badge.svg?token=64MZ6L6361)](https://codecov.io/gh/JuGid/automatic-breadcrumbs) 
+
 This bundle helps you creating automatic and manual breadcrumbs for your Symfony project.
 
 Installation
