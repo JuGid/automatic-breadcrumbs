@@ -110,6 +110,10 @@ jugid_automatic_breadcrumbs:
 This bundle provides multiple basic views you can configure.
 * `@AutomaticBreadcrumbs/view.html.twig` (by default)
 * `@AutomaticBreadcrumbs/tailwind_view.html.twig`
+* `@AutomaticBreadcrumbs/bootstrap_v5_view.html.twig`
+* `@AutomaticBreadcrumbs/foundation_v6_view.html.twig`
+
+All this basics templates can be improved, feel free to send a PR.
 
 Also, you can override them thanks to Symfony in your project `/templates/bundle/AutomaticBreadcrumbs` folder.
 [See the documentation](https://symfony.com/doc/current/bundles/override.html)

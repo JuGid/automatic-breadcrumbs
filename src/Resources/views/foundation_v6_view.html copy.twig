@@ -1,0 +1,12 @@
+{% if breadcrumb_collection | length > 0 %}
+    <div class="grid-x grid-padding-x">
+    {% for breadcrumb in breadcrumb_collection %}
+        {% if loop.index0 < ((breadcrumb_collection|length) - 1) %}
+            <a class="cell" href="{{ breadcrumb.path }}">{{ breadcrumb.text }}</a> 
+            <span class="cell">{{ separator }}</span>
+        {% else %}
+            <span class="cell">{{ breadcrumb.text }}</span>
+        {% endif %}
+    {% endfor %}
+    </div>
+{% endif %}
