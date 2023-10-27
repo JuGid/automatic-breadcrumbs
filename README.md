@@ -92,13 +92,16 @@ public function index(Breadcrumbs $breadcrumbs): Response
     return $this->render('index.html.twig', []);
 }
 ```
-Known issues
-============
-Tests are coming...
-Section to complete soon...
+
+Help needed
+===========
+- #1
+- #2
+- #3
 
 Contributing
 ============
 We welcome contributions to this project, including pull requests and issues (and discussions on existing issues).
 
 Originally created for [Suitvie](https://suitvie.fr) (bêta 0.3.0)
+Inspired by [mhujer/BreadcrumbsBundle](https://github.com/mhujer/BreadcrumbsBundle)
