@@ -86,7 +86,7 @@ public function index(Breadcrumbs $breadcrumbs): Response
 {
     $breadcrumbs
         ->getCollection()
-        ->addItem('Google', 'http://google.fr')
+        ->addItem('Github', 'http://github.com')
     ;
 
     return $this->render('index.html.twig', []);
