@@ -9,12 +9,8 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 /**
  * @author Julien Gidel <gidjulien@gmail.com>
  */
-class AutomaticBreadcrumbsBundle extends Bundle {
-
-    /*
-     * Personnaliser le séparateur de chaque jugid_automatic_render()
-     */
-
+class AutomaticBreadcrumbsBundle extends Bundle 
+{
     public function getContainerExtension(): ?ExtensionInterface
     {
         if (null === $this->extension) {
