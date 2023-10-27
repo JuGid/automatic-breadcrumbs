@@ -95,9 +95,10 @@ public function index(Breadcrumbs $breadcrumbs): Response
 
 Help needed
 ===========
-- #1
-- #2
-- #3
+
+* [tests] Unit tests ([#1][i1])
+* [feature] More views ([#2][i2])
+* [feature] PHP7 compatibility ([#3][i3])
 
 Contributing
 ============
@@ -105,3 +106,7 @@ We welcome contributions to this project, including pull requests and issues (an
 
 Originally created for [Suitvie](https://suitvie.fr) (bêta 0.3.0)
 Inspired by [mhujer/BreadcrumbsBundle](https://github.com/mhujer/BreadcrumbsBundle)
+
+[i1]: https://github.com/JuGid/automatic-breadcrumbs/issues/1
+[i2]: https://github.com/JuGid/automatic-breadcrumbs/issues/2
+[i3]: https://github.com/JuGid/automatic-breadcrumbs/issues/3
