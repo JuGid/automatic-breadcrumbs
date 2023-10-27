@@ -6,7 +6,7 @@
     <services>
 
         <service id="jugid_automatic_breadcrumbs.strategy.default" class="Jugid\AutomaticBreadcrumbs\Strategy\HierarchyStrategy">
-            <tag name="jugid.automati_breadcrumbs.strategy"/>
+            <tag name="jugid.automatic_breadcrumbs.strategy"/>
         </service>
         
         <service id="Jugid\AutomaticBreadcrumbs\Strategy\HierarchyStrategy" alias="jugid_automatic_breadcrumbs.strategy.default"/>

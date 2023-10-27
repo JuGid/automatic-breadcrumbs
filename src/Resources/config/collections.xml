@@ -7,14 +7,14 @@
 
         <service id="jugid_automatic_breadcrumbs.collection.default" class="Jugid\AutomaticBreadcrumbs\Collection\BreadcrumbsCollection">
             <argument type="service" id="router" />
-            <tag name="jugid.automati_breadcrumbs.collection"/>
+            <tag name="jugid.automatic_breadcrumbs.collection"/>
         </service>
         
         <service id="Jugid\AutomaticBreadcrumbs\Collection\BreadcrumbsCollection" alias="jugid_automatic_breadcrumbs.collection.default" />
 
         <service id="jugid_automatic_breadcrumbs.collection.disable" class="Jugid\AutomaticBreadcrumbs\Collection\DisableBreadcrumbsCollection">
             <argument type="service" id="router" />
-            <tag name="jugid.automati_breadcrumbs.collection"/>
+            <tag name="jugid.automatic_breadcrumbs.collection"/>
         </service>
         
         <service id="Jugid\AutomaticBreadcrumbs\Collection\DisableBreadcrumbsCollection" alias="jugid_automatic_breadcrumbs.collection.disable" />

@@ -137,7 +137,7 @@ You can create your own template and set it in the configuration. The Renderer i
 - `{{ separator }}` : the breadcrumbs separator
 
 ### Collection
-You can also create your own method storing breadcrumbs. Simply create a class implementing the Jugid\AutomaticBreadcrumbs\Collection\CollectionInterface, tag it as `jugid.automati_breadcrumbs.collection` in your `services.yaml` and set it in the bundle configuration.
+You can also create your own method storing breadcrumbs. Simply create a class implementing the Jugid\AutomaticBreadcrumbs\Collection\CollectionInterface, tag it as `jugid.automatic_breadcrumbs.collection` in your `services.yaml` and set it in the bundle configuration.
 The default collection works as the bundle is supposed to work.
 
 #### Possible collections

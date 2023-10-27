@@ -26,8 +26,8 @@ class AutomaticBreadcrumbsExtension extends Extension {
         $configuration = $this->getConfiguration($configs, $container);
         $config = $this->processConfiguration($configuration, $configs);
 
-        $collection_id = $this->findId($container, 'jugid.automati_breadcrumbs.collection', $config['collection_class']);
-        $strategy_id = $this->findId($container, 'jugid.automati_breadcrumbs.strategy', $config['strategy_class']);
+        $collection_id = $this->findId($container, 'jugid.automatic_breadcrumbs.collection', $config['collection_class']);
+        $strategy_id = $this->findId($container, 'jugid.automatic_breadcrumbs.strategy', $config['strategy_class']);
 
         $container
             ->getDefinition($collection_id)
