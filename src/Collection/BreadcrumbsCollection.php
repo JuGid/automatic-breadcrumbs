@@ -12,23 +12,44 @@ use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
  */
 class BreadcrumbsCollection implements BreadcrumbsCollectionInterface 
 {
-    private array $breadcrumbs = ['default' => []];
+    protected array $breadcrumbs = ['default' => []];
 
-    private array $includes = [];
+    protected array $includes = [];
 
     public function __construct(
-        private UrlGeneratorInterface $urlGenerator
+        protected UrlGeneratorInterface $urlGenerator
     ) {}
 
     /**
      * @inheritDoc
      */
     public function addBreadcrumb(BreadcrumbInterface $breadcrumb, string $namespace = 'default'): BreadcrumbsCollectionInterface {
+        if(!$this->isIncluded($breadcrumb->getPath(), $namespace)) {
+            return $this;
+        }
+        
         if(!$this->hasNamespace($namespace)) {
             $this->add($namespace);
         }
 
         $this->breadcrumbs[$namespace][] = $breadcrumb;
+
+        return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function prependBreadcrumb(BreadcrumbInterface $breadcrumb, string $namespace = 'default'): BreadcrumbsCollectionInterface {
+        if(!$this->isIncluded($breadcrumb->getPath(), $namespace)) {
+            return $this;
+        }
+
+        if(!$this->hasNamespace($namespace)) {
+            $this->add($namespace);
+        }
+
+        array_unshift($this->breadcrumbs[$namespace], $breadcrumb);
 
         return $this;
     }

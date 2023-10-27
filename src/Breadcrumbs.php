@@ -3,6 +3,7 @@
 namespace Jugid\AutomaticBreadcrumbs;
 
 use Jugid\AutomaticBreadcrumbs\Collection\BreadcrumbsCollectionInterface;
+use Jugid\AutomaticBreadcrumbs\Collection\DisableBreadcrumbsCollectionInterface;
 use Jugid\AutomaticBreadcrumbs\Renderer\BreadcrumbsRendererInterface;
 use Twig\Environment;
 
@@ -16,7 +17,7 @@ class Breadcrumbs
 
     public function __construct(
         private Environment $twig,
-        private BreadcrumbsCollectionInterface $collection,
+        private BreadcrumbsCollectionInterface|DisableBreadcrumbsCollectionInterface $collection,
         private BreadcrumbsRendererInterface $renderer
     ) {}
 
@@ -40,7 +41,10 @@ class Breadcrumbs
         return $this->getRenderer()->render($breadcrumb_collection, $options);
     }
 
-    public function getCollection() : BreadcrumbsCollectionInterface {
+    /**
+     * @return BreadcrumbsCollectionInterface|DisableBreadcrumbsCollectionInterface 
+     */
+    public function getCollection() : BreadcrumbsCollectionInterface|DisableBreadcrumbsCollectionInterface {
         return $this->collection;
     }
 

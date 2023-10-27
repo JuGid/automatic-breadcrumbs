@@ -58,17 +58,13 @@ class AutomaticBreadcrumbsExtension extends Extension {
     private function findId(ContainerBuilder $container, string $tag, string $class) : string 
     {
         $available_ids = $container->findTaggedServiceIds($tag);
-
-        foreach($available_ids as $id => $tags) {
-            try {
-                $container->getAlias($class);
-                return $id;
-            } catch(InvalidArgumentException $e) {
-                continue;
-            }
+        
+        try {
+            $alias = $container->getAlias($class);
+            return $alias->__toString();
+        } catch(InvalidArgumentException $e) {
+            throw new InvalidConfigurationException(sprintf('Class %s does not exist or is not registered as %s', $class, $tag));
         }
-
-        throw new InvalidConfigurationException(sprintf('Class %s does not exist or is not registered as %s', $class, $tag));
     }
 
     public function getAlias(): string

@@ -9,7 +9,8 @@ class UrlBreadcrumb implements BreadcrumbInterface {
 
     public function __construct(
         private string $text,
-        private string $path
+        private string $path,
+        private bool $disable = false
     ) {}
 
     /**
@@ -24,6 +25,13 @@ class UrlBreadcrumb implements BreadcrumbInterface {
      */
     public function getPath(): string { 
         return $this->path;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function isDisable(): bool { 
+        return $this->disable;
     }
     
 }

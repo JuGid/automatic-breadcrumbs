@@ -17,4 +17,10 @@ interface BreadcrumbInterface {
      * @return string 
      */
     public function getPath() : string;
+
+    /**
+     * Return the disability's breadcrumb
+     * @return bool 
+     */
+    public function isDisable() : bool;
 }
