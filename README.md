@@ -16,7 +16,7 @@ Applications that use Symfony Flex
 Open a command console, enter your project directory and execute:
 
 ```console
-$ composer require jugid/automatic-breadcrumbs
+$ composer require jugid/automatic-breadcrumbs-bundle
 ```
 That's it !
 
@@ -57,7 +57,7 @@ That's it ! For more detailled options, visit the `/docs` folder on this github 
 
 Examples
 ========
-Those examples are the simplest example we can provide : 
+Those examples are the simplest examples we can provide : 
 
 When breadcrumbs are created automatically : 
 --------------------------------------------
