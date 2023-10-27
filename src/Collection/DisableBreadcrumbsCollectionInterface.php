@@ -13,7 +13,7 @@ interface DisableBreadcrumbsCollectionInterface extends BreadcrumbsCollectionInt
      * @param string $url 
      * @return DisableBreadcrumbsCollectionInterface 
      */
-    public function addDisableItem(string $text, string $url) : self;
+    public function addDisableItem(string $text, string $url) : static;
 
     /**
      * Add a BreadcrumbInterface object representing a future element to the default namespace with the url generated
@@ -22,7 +22,7 @@ interface DisableBreadcrumbsCollectionInterface extends BreadcrumbsCollectionInt
      * @param array $parameters 
      * @return DisableBreadcrumbsCollectionInterface 
      */
-    public function addDisableRouteItem(string $text, string $route, array $parameters = []): self;
+    public function addDisableRouteItem(string $text, string $route, array $parameters = []): static;
 
     /**
      * Add a BreadcrumbInterface object representing a future element to the specfied namespace
@@ -31,7 +31,7 @@ interface DisableBreadcrumbsCollectionInterface extends BreadcrumbsCollectionInt
      * @param string $url 
      * @return DisableBreadcrumbsCollectionInterface 
      */
-    public function addDisableItemNamespace(string $namespace, string $text, string $url) : self;
+    public function addDisableItemNamespace(string $namespace, string $text, string $url) : static;
 
     /**
      * Add a BreadcrumbInterface object representing a future element to the specified namespace with the url generated
@@ -41,7 +41,7 @@ interface DisableBreadcrumbsCollectionInterface extends BreadcrumbsCollectionInt
      * @param array $parameters 
      * @return DisableBreadcrumbsCollectionInterface 
      */
-    public function addDisableRouteItemNamespace(string $namespace, string $text, string $route, array $parameters = []): self;
+    public function addDisableRouteItemNamespace(string $namespace, string $text, string $route, array $parameters = []): static;
 
     /**
      * Prepend a BreadcrumbInterface object representing a future element to the namespace
@@ -49,7 +49,7 @@ interface DisableBreadcrumbsCollectionInterface extends BreadcrumbsCollectionInt
      * @param string $url 
      * @return DisableBreadcrumbsCollectionInterface 
      */
-    public function prependDisableItem(string $text, string $url) : self;
+    public function prependDisableItem(string $text, string $url) : static;
 
     /**
      * Prepend a BreadcrumbInterface object representing a future element to the default namespace with the url generated
@@ -58,7 +58,7 @@ interface DisableBreadcrumbsCollectionInterface extends BreadcrumbsCollectionInt
      * @param array $parameters 
      * @return DisableBreadcrumbsCollectionInterface 
      */
-    public function prependDisableRouteItem(string $text, string $route, array $parameters = []): self;
+    public function prependDisableRouteItem(string $text, string $route, array $parameters = []): static;
 
     /**
      * Prepend a BreadcrumbInterface object representing a future element to the specfied namespace
@@ -67,7 +67,7 @@ interface DisableBreadcrumbsCollectionInterface extends BreadcrumbsCollectionInt
      * @param string $url 
      * @return DisableBreadcrumbsCollectionInterface 
      */
-    public function prependDisableItemNamespace(string $namespace, string $text, string $url) : self;
+    public function prependDisableItemNamespace(string $namespace, string $text, string $url) : static;
 
     /**
      * Prepend a BreadcrumbInterface object to the specified namespace with the url generated representing a future element
@@ -77,6 +77,6 @@ interface DisableBreadcrumbsCollectionInterface extends BreadcrumbsCollectionInt
      * @param array $parameters 
      * @return DisableBreadcrumbsCollectionInterface 
      */
-    public function prependDisableRouteItemNamespace(string $namespace, string $text, string $route, array $parameters = []): self;
+    public function prependDisableRouteItemNamespace(string $namespace, string $text, string $route, array $parameters = []): static;
 
 }

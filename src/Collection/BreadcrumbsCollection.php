@@ -23,7 +23,7 @@ class BreadcrumbsCollection implements BreadcrumbsCollectionInterface
     /**
      * @inheritDoc
      */
-    public function addBreadcrumb(BreadcrumbInterface $breadcrumb, string $namespace = 'default'): self {
+    public function addBreadcrumb(BreadcrumbInterface $breadcrumb, string $namespace = 'default'): static {
         if(!$this->isIncluded($breadcrumb->getPath(), $namespace)) {
             return $this;
         }
@@ -40,7 +40,7 @@ class BreadcrumbsCollection implements BreadcrumbsCollectionInterface
     /**
      * @inheritDoc
      */
-    public function prependBreadcrumb(BreadcrumbInterface $breadcrumb, string $namespace = 'default'): self {
+    public function prependBreadcrumb(BreadcrumbInterface $breadcrumb, string $namespace = 'default'): static {
         if(!$this->isIncluded($breadcrumb->getPath(), $namespace)) {
             return $this;
         }
@@ -57,21 +57,21 @@ class BreadcrumbsCollection implements BreadcrumbsCollectionInterface
     /**
      * @inheritDoc
      */
-    public function addItem(string $text, string $url): self { 
+    public function addItem(string $text, string $url): static { 
         return $this->addItemNamespace('default', $text, $url);
     }
 
     /**
      * @inheritDoc
      */
-    public function addRouteItem(string $text, string $route, array $parameters = []): self {
+    public function addRouteItem(string $text, string $route, array $parameters = []): static {
         return $this->addRouteItemNamespace('default', $text, $route, $parameters);
     }
 
     /**
      * @inheritDoc
      */
-    public function addItemNamespace(string $namespace, string $text, string $url): self { 
+    public function addItemNamespace(string $namespace, string $text, string $url): static { 
         if(!$this->isIncluded($url, $namespace)) {
             return $this;
         }
@@ -88,7 +88,7 @@ class BreadcrumbsCollection implements BreadcrumbsCollectionInterface
     /**
      * @inheritDoc
      */
-    public function addRouteItemNamespace(string $namespace, string $text, string $route, array $parameters = []): self {
+    public function addRouteItemNamespace(string $namespace, string $text, string $route, array $parameters = []): static {
         $url = $this->urlGenerator->generate($route, $parameters);
         return $this->addItemNamespace($namespace, $text, $url);
     }
@@ -96,21 +96,21 @@ class BreadcrumbsCollection implements BreadcrumbsCollectionInterface
     /**
      * @inheritDoc
      */
-    public function prependItem(string $text, string $url) : self {
+    public function prependItem(string $text, string $url) : static {
         return $this->prependItemNamespace('default', $text, $url);
     }
 
     /**
      * @inheritDoc
      */
-    public function prependRouteItem(string $text, string $route, array $parameters = []): self {
+    public function prependRouteItem(string $text, string $route, array $parameters = []): static {
         return $this->prependRouteItemNamespace('default', $text, $route, $parameters);
     }
 
     /**
      * @inheritDoc
      */
-    public function prependItemNamespace(string $namespace, string $text, string $url) : self {
+    public function prependItemNamespace(string $namespace, string $text, string $url) : static {
         if(!$this->isIncluded($url, $namespace)) {
             return $this;
         }
@@ -127,7 +127,7 @@ class BreadcrumbsCollection implements BreadcrumbsCollectionInterface
     /**
      * @inheritDoc
      */
-    public function prependRouteItemNamespace(string $namespace, string $text, string $route, array $parameters = []): self {
+    public function prependRouteItemNamespace(string $namespace, string $text, string $route, array $parameters = []): static {
         $url = $this->urlGenerator->generate($route, $parameters);
         return $this->prependItemNamespace($namespace, $text, $url);
     }

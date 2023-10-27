@@ -14,7 +14,7 @@ interface BreadcrumbsCollectionInterface {
      * @param string $namespace 
      * @return BreadcrumbsCollectionInterface 
      */
-    public function addBreadcrumb(BreadcrumbInterface $breadcrumb, string $namespace = 'default'): self;
+    public function addBreadcrumb(BreadcrumbInterface $breadcrumb, string $namespace = 'default'): static;
 
     /**
      * Prepend a BreadcrumbInterface object to the namespace
@@ -22,7 +22,7 @@ interface BreadcrumbsCollectionInterface {
      * @param string $namespace 
      * @return BreadcrumbsCollectionInterface 
      */
-    public function prependBreadcrumb(BreadcrumbInterface $breadcrumb, string $namespace = 'default'): self;
+    public function prependBreadcrumb(BreadcrumbInterface $breadcrumb, string $namespace = 'default'): static;
 
     /**
      * Add(append) a BreadcrumbInterface object to the default namespace.
@@ -30,7 +30,7 @@ interface BreadcrumbsCollectionInterface {
      * @param string $url 
      * @return BreadcrumbsCollectionInterface 
      */
-    public function addItem(string $text, string $url) : self;
+    public function addItem(string $text, string $url) : static;
 
     /**
      * Add(append) a BreadcrumbInterface object to the default namespace with the url generated
@@ -39,7 +39,7 @@ interface BreadcrumbsCollectionInterface {
      * @param array $parameters 
      * @return BreadcrumbsCollectionInterface 
      */
-    public function addRouteItem(string $text, string $route, array $parameters = []): self;
+    public function addRouteItem(string $text, string $route, array $parameters = []): static;
 
     /**
      * Add(append) a BreadcrumbInterface object to the specfied namespace
@@ -48,7 +48,7 @@ interface BreadcrumbsCollectionInterface {
      * @param string $url 
      * @return BreadcrumbsCollectionInterface 
      */
-    public function addItemNamespace(string $namespace, string $text, string $url) : self;
+    public function addItemNamespace(string $namespace, string $text, string $url) : static;
 
     /**
      * Add(append) a BreadcrumbInterface object to the specified namespace with the url generated
@@ -58,7 +58,7 @@ interface BreadcrumbsCollectionInterface {
      * @param array $parameters 
      * @return BreadcrumbsCollectionInterface 
      */
-    public function addRouteItemNamespace(string $namespace, string $text, string $route, array $parameters = []): self;
+    public function addRouteItemNamespace(string $namespace, string $text, string $route, array $parameters = []): static;
 
     /**
      * Prepend a BreadcrumbInterface object to the namespace
@@ -66,7 +66,7 @@ interface BreadcrumbsCollectionInterface {
      * @param string $url 
      * @return BreadcrumbsCollectionInterface 
      */
-    public function prependItem(string $text, string $url) : self;
+    public function prependItem(string $text, string $url) : static;
 
     /**
      * Prepend a BreadcrumbInterface object to the default namespace with the url generated
@@ -75,7 +75,7 @@ interface BreadcrumbsCollectionInterface {
      * @param array $parameters 
      * @return BreadcrumbsCollectionInterface 
      */
-    public function prependRouteItem(string $text, string $route, array $parameters = []): self;
+    public function prependRouteItem(string $text, string $route, array $parameters = []): static;
 
     /**
      * Prepend a BreadcrumbInterface object to the specfied namespace
@@ -84,7 +84,7 @@ interface BreadcrumbsCollectionInterface {
      * @param string $url 
      * @return BreadcrumbsCollectionInterface 
      */
-    public function prependItemNamespace(string $namespace, string $text, string $url) : self;
+    public function prependItemNamespace(string $namespace, string $text, string $url) : static;
 
     /**
      * Prepend a BreadcrumbInterface object to the specified namespace with the url generated
@@ -94,7 +94,7 @@ interface BreadcrumbsCollectionInterface {
      * @param array $parameters 
      * @return BreadcrumbsCollectionInterface 
      */
-    public function prependRouteItemNamespace(string $namespace, string $text, string $route, array $parameters = []): self;
+    public function prependRouteItemNamespace(string $namespace, string $text, string $route, array $parameters = []): static;
 
     /**
      * Add(append) a specified namespace
