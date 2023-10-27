@@ -51,8 +51,8 @@ In your template just add `{{ jugid_breadcrumbs_render() }}`.
 #### Function options
 To this function, you can pass multiple parameters in.
 ```yaml
-separator:string = breadcrumbs separator
-template:string = path to the template
+separator: string #breadcrumbs separator
+template: string #path to the template from the templates folder
 ```
 
 ```twig
@@ -70,6 +70,11 @@ For automatic breadcrumbs, the bundle needs to know the text to print. This is d
 There is another parameter named root that can be use : `root`. If this parameter is set to `true`, the bundle will not add any parent breadcrumbs. For example, if your application's routes are logically `/account/offers/premium/`. The bundle will tests the routes `['/account/offers/premium/', '/account/offers/', '/account/', '/']` but `/account/` breadcrumb attribute has the parameter `root` to `true`, then the `/` breadcrumb will not be rendered.
 
 By default, this parameter is set to `false`.
+
+Complete Breadcrumb attribute configuration example :
+```php
+#[Breadcrumb(title:'Index', root: true)]
+```
 
 ## Configuration
 
@@ -98,7 +103,7 @@ jugid_automatic_breadcrumbs:
         - '/account/'
 ```
 
-The path including `/account/` at the begining will be rendered (`/account/member`, `/account/configuration/modify`), including the root `/account/`. Add a ! to not print the root route path `/account/` as below.
+Only the paths including `/account/` at the begining will be rendered (`/account/member`, `/account/configuration/modify`), including the root `/account/` so the other paths will not be rendered. Add a ! to not print the root route path `/account/` as below.
 
 ```yaml
 jugid_automatic_breadcrumbs:
@@ -109,6 +114,7 @@ jugid_automatic_breadcrumbs:
 ### Views
 This bundle provides multiple basic views you can configure.
 * `@AutomaticBreadcrumbs/view.html.twig` (by default)
+* `@AutomaticBreadcrumbs/view_disable.html.twig` (recommended when used with DisableBreadcrumbsCollection)
 * `@AutomaticBreadcrumbs/tailwind_view.html.twig`
 * `@AutomaticBreadcrumbs/bootstrap_v5_view.html.twig`
 * `@AutomaticBreadcrumbs/foundation_v6_view.html.twig`
