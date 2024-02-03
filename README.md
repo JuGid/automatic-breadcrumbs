@@ -3,6 +3,12 @@
 
 This bundle helps you creating automatic and manual breadcrumbs for your Symfony project.
 
+Compatibility
+=============
+
+- php >= 8
+- Symfony >= 6
+
 Installation
 ============
 
