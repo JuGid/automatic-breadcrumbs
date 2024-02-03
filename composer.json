@@ -2,9 +2,6 @@
     "name": "jugid/automatic-breadcrumbs-bundle",
     "description": "Create automatic and manual breadcrumbs",
     "type": "symfony-bundle",
-    "require-dev": {
-        "phpunit/phpunit": "^10.4"
-    },
     "license": "MIT",
     "autoload": {
         "psr-4": {
@@ -37,5 +34,8 @@
         "unit-tests": [
             "vendor/bin/phpunit --colors=always --testsuite main --coverage-clover ./coverage.xml "
         ]
+    },
+    "require-dev": {
+        "symfony/test-pack": "^1.1"
     }
 }
