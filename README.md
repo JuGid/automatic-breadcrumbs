@@ -35,7 +35,7 @@ Open a command console, enter your project directory and execute the
 following command to download the latest stable version of this bundle:
 
 ```console
-$ composer require jugid/automatic-breadcrumbs
+$ composer require jugid/automatic-breadcrumbs-bundle
 ```
 
 ### Step 2 : Enable the Bundle
