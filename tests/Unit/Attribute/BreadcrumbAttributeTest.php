@@ -24,14 +24,14 @@ class BreadcrumbAttributeTest extends TestCase
     public function testShouldGetRoot() {
         $breadcrumb_false = new Breadcrumb('Title');
         $breadcrumb_true = new Breadcrumb('Title', true);
-        $this->assertFalse($breadcrumb_false);
-        $this->assertTrue($breadcrumb_true);
+        $this->assertFalse($breadcrumb_false->isRoot());
+        $this->assertTrue($breadcrumb_true->isRoot());
     }
 
     public function testShouldGetNamespace() {
         $breadcrumb_default = new Breadcrumb('Title');
         $breadcrumb_with_specific_namespace = new Breadcrumb('Title', false, 'my_namespace');
         $this->assertEquals('default', $breadcrumb_default->getNamespace());
-        $this->assertTrue('my_namespae', $breadcrumb_with_specific_namespace->getNamespace());
+        $this->assertEquals('my_namespace', $breadcrumb_with_specific_namespace->getNamespace());
     }
 }
