@@ -5,7 +5,7 @@ namespace Jugid\AutomaticBreadcrumbs\Tests\Attribute;
 use Jugid\AutomaticBreadcrumbs\Attribute\Breadcrumb;
 use PHPUnit\Framework\TestCase;
 
-class AttributeTest extends TestCase 
+class BreadcrumbAttributeTest extends TestCase 
 {
     
     public function testShouldTestAttributeConstruction()
