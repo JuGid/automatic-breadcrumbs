@@ -87,7 +87,8 @@ class BreadcrumbsSubscriber implements EventSubscriberInterface
         $this->strategy = $strategy;
     }
 
-    public static function getSubscribedEvents() { 
+    public static function getSubscribedEvents() : array 
+    { 
         return [
             KernelEvents::CONTROLLER => 'onKernelController',
         ];
