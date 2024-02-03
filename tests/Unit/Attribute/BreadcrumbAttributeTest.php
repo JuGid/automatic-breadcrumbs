@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 class BreadcrumbAttributeTest extends TestCase 
 {
     
-    public function testShouldTestAttributeConstruction()
+    public function testShouldTestAttributeConstruction() : void
     {
         $this->expectNotToPerformAssertions();
         $breadcrumb = new Breadcrumb('Title');
@@ -16,19 +16,22 @@ class BreadcrumbAttributeTest extends TestCase
         $breadcrumb = new Breadcrumb('Title', true, 'default');
     }
 
-    public function testShouldGetTitle() {
+    public function testShouldGetTitle() : void
+    {
         $breadcrumb = new Breadcrumb('Title');
         $this->assertEquals('Title', $breadcrumb->getTitle());
     }
 
-    public function testShouldGetRoot() {
+    public function testShouldGetRoot() : void
+    {
         $breadcrumb_false = new Breadcrumb('Title');
         $breadcrumb_true = new Breadcrumb('Title', true);
         $this->assertFalse($breadcrumb_false->isRoot());
         $this->assertTrue($breadcrumb_true->isRoot());
     }
 
-    public function testShouldGetNamespace() {
+    public function testShouldGetNamespace() : void
+    {
         $breadcrumb_default = new Breadcrumb('Title');
         $breadcrumb_with_specific_namespace = new Breadcrumb('Title', false, 'my_namespace');
         $this->assertEquals('default', $breadcrumb_default->getNamespace());

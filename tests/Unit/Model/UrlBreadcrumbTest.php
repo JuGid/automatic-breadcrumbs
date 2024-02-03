@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 class UrlBreadcrumbTest extends TestCase 
 {
     
-    public function testShouldTestBreadcrumbsModel()
+    public function testShouldTestBreadcrumbsModel() : void
     {
         $breadcrumb = new UrlBreadcrumb('My breadcrumb', '/my/breadcrumb/path');
 

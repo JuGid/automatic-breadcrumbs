@@ -7,7 +7,8 @@ use PHPUnit\Framework\TestCase;
 
 class HierarchyStrategyTest extends TestCase {
 
-    public function testShouldConstruct() {
+    public function testShouldConstruct() : void 
+    {
         $this->expectNotToPerformAssertions();
 
         $strategy = new HierarchyStrategy();
@@ -16,12 +17,13 @@ class HierarchyStrategyTest extends TestCase {
     /**
      * @dataProvider pathExpectedProvider
      */
-    public function testShouldDecomposeWithHierarchyStrategy(string $path, array $expected) {
+    public function testShouldDecomposeWithHierarchyStrategy(string $path, array $expected) : void 
+    {
         $strategy = new HierarchyStrategy();
         $this->assertEquals($expected, $strategy->decompose($path));
     }
 
-    public static function pathExpectedProvider() 
+    public static function pathExpectedProvider() : \Generator
     {
         yield ['path/to/page/', ['/path/to/page', '/path/to', '/path']];
         yield ['path/to/page', ['/path/to/page', '/path/to', '/path']];
