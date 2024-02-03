@@ -1,6 +1,6 @@
 <?php
 
-namespace Jugid\AutomaticBreadcrumbs\Tests;
+namespace Jugid\AutomaticBreadcrumbs\Tests\Model;
 
 use Jugid\AutomaticBreadcrumbs\Model\UrlBreadcrumb;
 use PHPUnit\Framework\TestCase;
