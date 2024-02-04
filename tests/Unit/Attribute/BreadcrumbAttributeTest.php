@@ -1,6 +1,6 @@
 <?php
 
-namespace Jugid\AutomaticBreadcrumbs\Tests\Attribute;
+namespace Jugid\AutomaticBreadcrumbs\Tests\Unit\Attribute;
 
 use Jugid\AutomaticBreadcrumbs\Attribute\Breadcrumb;
 use PHPUnit\Framework\TestCase;

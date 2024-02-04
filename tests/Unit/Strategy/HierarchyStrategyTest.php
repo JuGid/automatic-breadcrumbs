@@ -1,6 +1,6 @@
 <?php
 
-namespace Jugid\AutomaticBreadcrumbs\Tests\Strategy;
+namespace Jugid\AutomaticBreadcrumbs\Tests\Unit\Strategy;
 
 use Jugid\AutomaticBreadcrumbs\Strategy\HierarchyStrategy;
 use PHPUnit\Framework\TestCase;
